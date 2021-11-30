@@ -1,0 +1,348 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+}
+
+body{
+    background-color: black;
+}
+
+.hamburger-menu{
+    width: 3rem;
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    cursor: pointer;
+    z-index: 9999;
+}
+
+.line{
+    display: block;
+}
+
+.line::before,
+.line::after{
+    content: "";
+    display: block;
+    background-color: #fff;
+    height: 4px;
+    transition: all .2s;
+}
+
+.line::before{
+    margin-bottom: 1.6rem;
+    box-shadow:  0 1rem 0 #fff;
+}
+
+#toggle{
+    display: none;
+}
+
+#toggle:checked ~ .hamburger-menu .line::before{
+    box-shadow: 0 0 0 #fff;
+    transform: translateY(1rem) rotate(45deg);
+}
+
+#toggle:checked ~ .hamburger-menu .line::after{
+    box-shadow: 0 0 0 #fff;
+    transform: translateY(-1rem) rotate(-45deg);
+}
+
+.nav{
+    min-height: 100vh;
+    background-color: rgb(15, 15, 15);
+    padding: 5rem 2.5rem;
+    opacity: 0;
+    transform: scale(0);
+    transition: opacity .5s;
+}
+
+#toggle:checked ~ .nav{
+    opacity: 1;
+    transform: scale(1);
+}
+
+.nav-item{
+    list-style: none;
+    line-height: 2;
+
+}
+
+.nav-link{
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #fff;
+    font-size: 3rem;
+    font-weight: bold;
+    font-family: 'Heebo', sans-serif;
+    position: relative;
+}
+
+.nav-link::before{
+    content: "";
+    background-image: linear-gradient(90deg, #0575E6 0%, #00F260 50% );
+    width: calc(100% + 2rem);
+    height: .5rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%) scale(0);
+    transform-origin: left;
+    transition: transform .5s;
+}
+
+.nav-link:hover::before{
+    transform: translate(-50%,-50%) scale(1);
+}
+
+svg{
+    display: none;
+}
+
+.home{
+    height:100vh;
+    background-color: springgreen;
+    overflow: hidden;
+}
+
+.title{
+    position: absolute;
+    color:springgreen;
+    font-size: 3rem;
+    text-transform: uppercase;
+    font-family: 'Heebo', sans-serif;
+    top: 70rem;
+    right: 2rem;
+}
+
+.first-page{
+    height: 100vh;
+    background-color: rgb(31, 31, 31);
+}
+
+.second-page{
+    height: 100vh;
+    background-color: rgb(25, 25, 25);
+}
+
+.title-2{
+    position: absolute;
+    color:springgreen;
+    font-size: 3rem;
+    text-transform: uppercase;
+    font-family: 'Heebo', sans-serif;
+    top: 135rem;
+    right: 2rem;
+}
+
+.third-page{
+    height: 100vh;
+    background-color: rgb(22, 22, 22);
+}
+
+.title-3{
+    position: absolute;
+    color:springgreen;
+    font-size: 3rem;
+    text-transform: uppercase;
+    font-family: 'Heebo', sans-serif;
+    top: 201rem;
+    right: 2rem;
+}
+
+.fourth-page{
+    height: 100vh;
+    background-color: rgb(15, 15, 15);
+}
+
+.title-4{
+    position: absolute;
+    color:springgreen;
+    font-size: 3rem;
+    text-transform: uppercase;
+    font-family: 'Heebo', sans-serif;
+    top: 266rem;
+    right: 2rem;
+}
+
+.fith-page{
+    height:100vh;
+    background-color: rgb(5, 5, 5);
+}
+
+.title-5{
+    position: absolute;
+    color: springgreen;
+    font-size: 3rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-family: 'Heebo', sans-serif;
+    top: 330rem;
+    right: 2rem;
+}
+
+.scroll-up{
+    display: block;
+    position:absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 7rem;
+    width: 3rem;
+    border: .34rem solid #fff;
+    border-radius: 50px;
+    bottom: 20px;
+}
+
+.scroll-up::before,
+.scroll-up::after{
+    content: "";
+    position: absolute;
+    top:5%;
+    left: 50%;
+    border: 3px solid #fff;
+    height: .7rem;
+    width: .7rem;
+    transform: translateX(-50%) rotate(45deg);
+    border-bottom: transparent;
+    border-right: transparent;
+    animation: scroll-up 1.4s linear infinite;
+}
+.scroll-up::before{
+    top:5%;  
+}
+
+.scroll-down{
+    display: block;
+    position:absolute;
+    left: 55%;
+    top:185%;
+    transform: translateX(-50%);
+    height: 7rem;
+    width: 3rem;
+    border: .34rem solid #fff;
+    border-radius: 50px;
+    bottom: 20px;
+}
+
+.scroll-down::before,
+.scroll-down::after{
+    content: "";
+    position: absolute;
+    top:5%;
+    left: 55%;
+    border: 3px solid #fff;
+    height: .7rem;
+    width: .7rem;
+    transform: translateX(-50%) rotate(45deg);
+    border-top: transparent;
+    border-left: transparent;
+    animation: scroll-up 1.4s linear infinite;
+}
+.scroll-down::before{
+    top:5%;  
+}
+
+#s2{
+    position: absolute;
+    top: 185%;
+    left: 45%;
+}
+#s2-3{
+    top: 285%;
+}
+
+#s3{
+    position: absolute;
+    top: 285%;
+    left: 45%;
+}
+
+#s2-4{
+    top: 385%;
+}
+#s4{
+    position: absolute;
+    top: 385%;
+    left: 45%;
+}
+#s2-5{
+    top:485%;
+}
+#s5{
+    position: absolute;
+    top: 485%;
+    left: 45%;
+}
+
+#s6{
+    position: absolute;
+    top: 585%;
+}
+
+@keyframes scroll-up {
+    75%{
+        opacity: 1;
+        top:75%;
+    }
+    60%{
+        opacity: 1;
+    }
+    45%{
+        opacity: 1;
+    }
+    30%{
+        opacity: 1;
+    }
+    5%{
+        opacity: 1;
+    }
+
+    
+}
+
+@media screen and (min-width: 768px){
+    .hamburger-menu{
+        top: 5rem;
+        right: 5rem;
+    }
+
+    .nav{
+        padding: 5rem;
+    }
+
+    .nav-item{
+        line-height: 1.2;
+    }
+
+    .nav-link{
+        font-size: 8rem;
+    }
+
+    .nav-link::before{
+        width: calc(100% + 2.5rem);
+        height: 2rem;
+    }
+}
+
+@media screen and (min-width: 1600px){
+
+    .nav{
+        padding: 10rem 5rem;
+    }
+
+    .nav-link{
+        font-size: 19rem;
+    }
+
+    .nav-link::before{
+        width: calc(100% + 5rem);
+        height: 4rem;
+    }
+}
+
